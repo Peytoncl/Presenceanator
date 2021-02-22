@@ -1,0 +1,62 @@
+#controls {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#title {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.bg-dark.border-dark {
+  border-color: #343a40!important;
+}
+
+::placeholder {
+  color: rgb(20, 20, 20);
+}
+
+#detail_input:focus {
+  outline-width: 0;
+}
+
+#detail_input {
+  padding-left: 3px;
+}
+
+#titleText {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+#client_input {
+  margin-left: 30px;
+  padding-left: 2px;
+  outline-width: 0;
+  margin-top: 10px;
+}
+
+#start_button {
+  margin-left: 30px;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+#start_button:hover {
+  background-color: rgb(52, 58, 64) !important;
+}
+
+#start_button {
+  background-color: rgb(51, 58, 64) !important;
+}
+
+#console {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+#console_logs {
+  margin-left: 3px;
+  height: 514px;
+}
+
