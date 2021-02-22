@@ -16,6 +16,7 @@ function start() {
             details: details
         });
     });
-  
+
     client.login({ clientId: clientId });
+    
 }
