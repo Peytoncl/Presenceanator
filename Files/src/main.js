@@ -18,5 +18,4 @@ function start() {
     });
 
     client.login({ clientId: clientId });
-    
 }
