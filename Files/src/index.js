@@ -12,6 +12,7 @@ const createWindow = () => {
     height: 800,
     maximizable: false,
     resizable: false,
+    icon: __dirname + "/presenceanator_logo.ico",
     webPreferences: {
       nodeIntegration: true
     }
