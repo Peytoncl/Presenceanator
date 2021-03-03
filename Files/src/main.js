@@ -6,16 +6,27 @@ details = document.getElementById('detail_input').value;
 startButton.onclick = start;
 
 function start() {
-  clientId = document.getElementById('client_input').value;
-  details = document.getElementById('detail_input').value;
+    var clientId = document.getElementById('client_input').value;
+    var details = document.getElementById('detail_input').value;
+    var elapsedTime = $("#formCheck-1").is(":checked");
+    const startTimestamp = new Date();
 
     const client = new DiscordRPC.Client({ transport: 'ipc' });
 
     client.on('ready', () => {
-        client.setActivity({
-            largeImageKey: 'test',
-            details: details
-        });
+        if (elapsedTime == true) {
+            client.setActivity({
+                largeImageKey: 'test',
+                details: details,
+                startTimestamp
+            });
+        }
+        else {
+            client.setActivity({
+                largeImageKey: 'test',
+                details: details
+            });
+        }
         updateConsole('Signed in as "' + client.user.username + '"');
     });
 
