@@ -1,17 +1,29 @@
 const DiscordRPC = require('discord-rpc');
 var $ = require('jquery');
+var started = false;
+started = false;
 startButton = document.getElementById('start_button');
 clientId = document.getElementById('client_input').value;
 details = document.getElementById('detail_input').value;
 startButton.onclick = start;
+var client = new DiscordRPC.Client({ transport: 'ipc' });
 
 function start() {
+
+    if (started == true) { 
+        stop(); 
+        return; 
+    }
+
+    started = true;
+    startButton.innerHTML = "Stop";
+
     var clientId = document.getElementById('client_input').value;
     var details = document.getElementById('detail_input').value;
     var elapsedTime = $("#formCheck-1").is(":checked");
     const startTimestamp = new Date();
 
-    const client = new DiscordRPC.Client({ transport: 'ipc' });
+    client = new DiscordRPC.Client({ transport: 'ipc' });
 
     client.on('ready', () => {
         if (elapsedTime == true) {
@@ -33,6 +45,13 @@ function start() {
     client.login({ clientId: clientId });
 }
 
+function stop() {
+    started = false;
+    startButton.innerHTML = "Start";
+    client.clearActivity();
+    updateConsole('Stopped');
+}
+
 function updateConsole(added) {
     output = document.getElementById("console_logs");
     console.log(checkLines(output.innerHTML));
@@ -45,7 +64,7 @@ function updateConsole(added) {
         output.innerHTML = added;
     }
     else {
-        output.innerHTML = output.innerHTML + "<br>/" + added;
+        output.innerHTML = output.innerHTML + "<br>" + added;
     }
 }
 
