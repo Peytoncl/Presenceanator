@@ -61,42 +61,20 @@ function start() {
     client = new DiscordRPC.Client({ transport: 'ipc' });
 
     client.on('ready', () => {
-        if (hasLetters(button1_label)) {
-            if (elapsedTime) {
-                client.setActivity({
-                    largeImageKey: 'test',
-                    details: details,
-                    state: state,
-                    buttons: [{label: button1_label, url: button1_url}],
-                    startTimestamp
-                });
-            }
-            else if (!elapsedTime) {
-                client.setActivity({
-                    largeImageKey: 'test',
-                    state: state,
-                    buttons: [{label: button1_label, url: button1_url}],
-                    details: details
-                });
-            }
-        }
-        else {
-            if (elapsedTime) {
-                client.setActivity({
-                    largeImageKey: 'test',
-                    details: details,
-                    state: state,
-                    startTimestamp
-                });
-            }
-            else if (!elapsedTime) {
-                client.setActivity({
-                    largeImageKey: 'test',
-                    state: state,
-                    details: details
-                });
-            }
-        }
+
+        if (!hasLetters(state)) state = undefined;
+        if (!hasLetters(details)) details = undefined;
+        if (!hasLetters(button1_label)) button1_label = undefined;
+        if (!hasLetters(button1_url)) button1_url = undefined;
+        if (!elapsedTime) startTimestamp = undefined;
+
+        client.setActivity({
+            largeImageKey: 'test',
+            details: details,
+            state: state,
+            buttons: [{label: button1_label, url: button1_url}],
+            startTimestamp
+        });
 
         updateConsole('Signed in as "' + client.user.username + '"', 1);
     });
