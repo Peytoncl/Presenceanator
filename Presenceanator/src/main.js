@@ -42,6 +42,11 @@ function start() {
         return;
     }
 
+    if (!validURL(button1_url)) {
+        updateConsole('"Button Url" is not a valid URL, and therefor will not work.');
+        return;
+    }
+
     if (!hasLetters(button1_label) && hasLetters(button1_url) && !confirmStart) {
         confirmStart = true;
         updateConsole('There is something in "Button Url" but not in "Button Label", press start again to confirm that you ACTUALLY want to start.', 2)
@@ -64,17 +69,43 @@ function start() {
 
         if (!hasLetters(state)) state = undefined;
         if (!hasLetters(details)) details = undefined;
-        if (!hasLetters(button1_label)) button1_label = undefined;
-        if (!hasLetters(button1_url)) button1_url = undefined;
-        if (!elapsedTime) startTimestamp = undefined;
 
-        client.setActivity({
-            largeImageKey: 'test',
-            details: details,
-            state: state,
-            buttons: [{label: button1_label, url: button1_url}],
-            startTimestamp
-        });
+        if (hasLetters(button1_url)) {
+            if (elapsedTime) {
+                client.setActivity({
+                    largeImageKey: 'test',
+                    details: details,
+                    state: state,
+                    buttons: [{label: button1_label, url: button1_url}],
+                    startTimestamp
+                });
+            }
+            else {
+                client.setActivity({
+                    largeImageKey: 'test',
+                    details: details,
+                    state: state,
+                    buttons: [{label: button1_label, url: button1_url}],
+                });
+            }
+        }
+        else {
+            if (elapsedTime) {
+                client.setActivity({
+                    largeImageKey: 'test',
+                    details: details,
+                    state: state,
+                    startTimestamp
+                });
+            }
+            else {
+                client.setActivity({
+                    largeImageKey: 'test',
+                    details: details,
+                    state: state,
+                });
+            }
+        }
 
         updateConsole('Signed in as "' + client.user.username + '"', 1);
     });
@@ -111,3 +142,13 @@ function checkLines(string) {
     var lines = string.split(/<br\/?>/)
     return lines.length;
 }
+
+function validURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+  }
