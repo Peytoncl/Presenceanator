@@ -11,9 +11,34 @@
 </head>
 
 <body style="background-color: rgb(48,48,48);">
-    <div class="text-center" id="title">
-        <h1 class="text-left" id="titleText" style="font-family: Allerta, sans-serif;color: rgb(33,33,33);">Presenceanator</h1>
-    </div>
+    <header id="titlebar">
+        <div id="drag-region">
+            <div id="window-title">
+                <span style="padding-left: 5px; padding-bottom: 15px;">Presenceanator</span>
+            </div>
+
+            <div id="window-controls">
+
+                <div class="button" id="min-button">
+                  <img class="icon" srcset="icons/min-w-10.png 1x, icons/min-w-12.png 1.25x, icons/min-w-15.png 1.5x, icons/min-w-15.png 1.75x, icons/min-w-20.png 2x, icons/min-w-20.png 2.25x, icons/min-w-24.png 2.5x, icons/min-w-30.png 3x, icons/min-w-30.png 3.5x" draggable="false" />
+                </div>
+          
+                <div class="button" id="max-button">
+                  <img class="icon" srcset="icons/max-w-10.png 1x, icons/max-w-12.png 1.25x, icons/max-w-15.png 1.5x, icons/max-w-15.png 1.75x, icons/max-w-20.png 2x, icons/max-w-20.png 2.25x, icons/max-w-24.png 2.5x, icons/max-w-30.png 3x, icons/max-w-30.png 3.5x" draggable="false" />
+                </div>
+          
+                <div class="button" id="restore-button">
+                  <img class="icon" srcset="icons/restore-w-10.png 1x, icons/restore-w-12.png 1.25x, icons/restore-w-15.png 1.5x, icons/restore-w-15.png 1.75x, icons/restore-w-20.png 2x, icons/restore-w-20.png 2.25x, icons/restore-w-24.png 2.5x, icons/restore-w-30.png 3x, icons/restore-w-30.png 3.5x" draggable="false" />
+                </div>
+          
+                <div class="button" id="close-button">
+                  <img class="icon" srcset="icons/close-w-10.png 1x, icons/close-w-12.png 1.25x, icons/close-w-15.png 1.5x, icons/close-w-15.png 1.75x, icons/close-w-20.png 2x, icons/close-w-20.png 2.25x, icons/close-w-24.png 2.5x, icons/close-w-30.png 3x, icons/close-w-30.png 3.5x" draggable="false" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="main">
     <div class="text-left" id="controls"><input class="bg-dark border rounded border-dark shadow-none" type="text" id="detail_input" placeholder="Details"></div>
     <div class="text-left" id="controls1"><input class="bg-dark border rounded border-dark shadow-none" type="text" id="state_input" placeholder="State"></div>
     <div class="text-left" id="button1"><input class="bg-dark border rounded border-dark shadow-none" type="text" id="button_label" placeholder="Button Label"></div>
@@ -22,12 +47,14 @@
     <div
         class="form-check" id="elapsed_time" style="margin-bottom: 0px;margin-top: -42px;"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" id="elapsed_time_label" for="formCheck-1" style="color: rgb(167,167,167);padding-bottom: 0px;width: 100px;">Elapsed Time</label></div>
         <div id="console"
-            style="height: 545px;width: 500px;color: rgb(20,20, 20);background-color: #3a3a3a;">
+            style="height: 594px;width: 500px;color: rgb(20,20, 20);background-color: #3a3a3a;">
             <p id="console_logs"></p>
         </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src='windowControls.js'></script>
         <script defer src='main.js'></script>
+    </div>
 </body>
 
 </html>

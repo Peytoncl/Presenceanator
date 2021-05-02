@@ -11,11 +11,13 @@ const createWindow = () => {
     width: 1400,
     height: 800,
     maximizable: false,
-    resizable: true,
+    resizable: false,
+    frame: false,
     icon: __dirname + "/presenceanator_logo.ico",
     webPreferences: {
       nodeIntegration: true,
-      devTools: true
+      enableRemoteModule: true,
+      devTools: false
     }
   });
 
