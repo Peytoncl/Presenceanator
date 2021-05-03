@@ -42,7 +42,7 @@ function start() {
         return;
     }
 
-    if (!validURL(button1_url)) {
+    if (hasLetters(button1_url) && !validURL(button1_url)) {
         updateConsole('"Button Url" is not a valid URL, and therefor will not work.');
         return;
     }
