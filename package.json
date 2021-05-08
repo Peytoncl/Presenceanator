@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "discord-rpc": "^3.2.0",
+    "discord-webhook-node": "^1.1.8",
     "electron-packager": "^15.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "jquery": "^3.5.1"
