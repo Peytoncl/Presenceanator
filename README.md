@@ -6,7 +6,7 @@
 
 # What is Presenceanator?
 
-Presenceanator is a software designed to help making a custom Discord Rich Presence, easy and fast.
+Presenceanator is a software designed to help make a custom Discord Rich Presence, easy and fast.
 
 # How to use
 
