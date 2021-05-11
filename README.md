@@ -10,7 +10,7 @@ Presenceanator is a software designed to help making a custom Discord Rich Prese
 
 # How to use
 
-Once you download the latest version, go to https://discord.com/developers/applications and create a new application (The name of your application will be the name of the game Presenceanator says youre playing). Once you make your application, copy the application ID, and once you do that, open up Presenceanator and paste the application ID into the application ID text box. The rest should be pretty self explanatory. 
+Once you download the latest version, go to https://discord.com/developers/applications and create a new application (The name of your application will be the name of the game Presenceanator says youre playing). Once you make your application, copy the application ID, and once you do that, open up Presenceanator and paste the application ID into the application ID text box. The rest should be pretty self explanatory. When you decide to close Presenceanator, please note that it will minimize to the tray. When its in the tray, you can left click on the Presenceanator icon to unminimize it. If you right click the icon, you can see a few options that should also be self explanatory.
 
 # Technologies
 
