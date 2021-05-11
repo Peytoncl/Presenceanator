@@ -10,11 +10,11 @@ Presenceanator is a software designed to help making a custom Discord Rich Prese
 
 # How to use
 
-## Make an application ID
+## Making an application ID
 
 To start off, download the latest version of Presenceanator from https://github.com/Peytoncl/Presenceanator/releases/latest. Once youve download the latest version, go to https://discord.com/developers/applications and create a new application (The name of your application will be the name of the game Presenceanator says youre playing). 
 
-## Add the application ID to Presenceanator
+## Adding the application ID to Presenceanator
 
 Once you make your application, copy the application ID, and once you do that, open up Presenceanator and paste the application ID into the application ID text box. The rest should be pretty self explanatory.
 
