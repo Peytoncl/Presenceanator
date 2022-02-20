@@ -31,7 +31,7 @@ body {
 }
 
 .bg-dark.border-dark {
-  border-color: #343a40!important;
+  border-color: #2b3035!important;
 }
 
 ::placeholder {
@@ -94,7 +94,7 @@ body {
 }
 
 #start_button {
-  background-color: rgb(51, 58, 64) !important;
+  background-color: rgb(52, 58, 64) !important;
 }
 
 #console {
@@ -121,7 +121,7 @@ body {
 }
 
 body {
-  border: 1px solid #48545c;
+  border: 1px solid #000000;
   overflow-y: hidden;
 }
 
